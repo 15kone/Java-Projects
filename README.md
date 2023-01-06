@@ -1,3 +1,2 @@
 # Java-Projects
-The java projects I've made myself
-I have no idea why GitHub ruins my indentation.
+The java projects I've made myself that GitHub butchers the indentation of.
