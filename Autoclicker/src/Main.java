@@ -5,7 +5,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-
 			while (true) {
 				Robot r = new Robot();
 				int button = InputEvent.BUTTON1_DOWN_MASK;
