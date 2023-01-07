@@ -1,20 +1,24 @@
 package studentmanagement;
 
+import java.util.Scanner;
+
 public class StudentManagementApp {
 
-		public static void main(String[] args) {
-				// create a new student
-				Student student1 = new Student();
-				// if the student is created successfully, print out following message
-				System.out.println("student created successfully");
-				// print out all of student's info
-				System.out.println(student1);
+	public static void main(String[] args) {
+		// Ask how many new students we want to add
+		System.out.print("Enter number of new students to enroll: ");
+		Scanner in = new Scanner(System.in);
+		int numOfStudents = in.nextInt();
+		Student[] students = new Student[numOfStudents];
 
-				// same process as below
-				Student student2 = new Student();
-				System.out.println("student created successfully");
-				System.out.println(student2);
-
-
+		// Create said number of students
+		for (int n = 0; n < numOfStudents; n++) {
+			students[n] = new Student();
 		}
+
+		for (int n = 0; n < numOfStudents; n++) {
+			System.out.println(students[n]);
+		}
+
+	}
 }
