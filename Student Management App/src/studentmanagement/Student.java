@@ -1,10 +1,13 @@
 package studentmanagement;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Student {
 
+		//required parameters
 		private final String email;
+		private final int id;
 		private String firstName;
 		private String lastName;
 		private String major;
@@ -14,6 +17,8 @@ public class Student {
 		private String zipCode;
 		private int age;
 
+
+		// constructor for students
 		public Student() {
 				this.firstName = setFirstName();
 				this.lastName = setLastName();
@@ -28,9 +33,10 @@ public class Student {
 				country = setCountry();
 				zipCode = setZipCode();
 				age = setAge();
-
+				this.id = setId();
 		}
 
+		// set the student's first name
 		private String setFirstName() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's first name: ");
@@ -38,6 +44,7 @@ public class Student {
 				return firstName;
 		}
 
+		// set the student's last name
 		private String setLastName() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's last name: ");
@@ -45,6 +52,7 @@ public class Student {
 				return lastName;
 		}
 
+		// set the university the student is attending
 		private String setUniversity() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the university suffix: ");
@@ -52,6 +60,7 @@ public class Student {
 				return uniSuffix;
 		}
 
+		// set the major the student's attending
 		private String setMajor() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's major: ");
@@ -59,13 +68,15 @@ public class Student {
 				return major;
 		}
 
+		// set the student's nationality
 		private String setCountry() {
 				Scanner in = new Scanner(System.in);
-				System.out.print("Please enter the student's country: ");
+				System.out.print("Please enter the student's nationality: ");
 				country = in.nextLine();
 				return country;
 		}
 
+		// set the student's city
 		private String setCity() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's city: ");
@@ -73,6 +84,7 @@ public class Student {
 				return city;
 		}
 
+		// set the student's zip code
 		private String setZipCode() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's zip-code: ");
@@ -80,6 +92,7 @@ public class Student {
 				return zipCode;
 		}
 
+		// set the student's age
 		private int setAge() {
 				Scanner in = new Scanner(System.in);
 				System.out.print("Please enter the student's age: ");
@@ -91,18 +104,27 @@ public class Student {
 				return age;
 		}
 
+		// set a random id in range specified below
+		private int setId() {
+				int id = (new Random()).nextInt(900000) + 10000;
+				return id;
+		}
 
+
+		// to string method
 		@Override
 		public String toString() {
 				return "Student{" +
-						"firstName='" + firstName + '\'' +
+						"email='" + email + '\'' +
+						", firstName='" + firstName + '\'' +
 						", lastName='" + lastName + '\'' +
-						", email='" + email + '\'' +
-						", university='" + uniSuffix + '\'' +
+						", major='" + major + '\'' +
+						", uniSuffix='" + uniSuffix + '\'' +
 						", city='" + city + '\'' +
 						", country='" + country + '\'' +
 						", zipCode='" + zipCode + '\'' +
 						", age=" + age +
+						", id=" + id +
 						'}';
 		}
 }
