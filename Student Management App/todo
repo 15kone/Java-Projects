@@ -1,3 +1,4 @@
-add UI for managing students (create, delete, edit)
-make student creation easier, without hard coding them in
+add UI for managing students (create, delete, edit) -> creation done
+make student creation easier, without hard coding them in -> done
+make each student have a separate ID -> done
 connect everything to a database
